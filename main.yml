@@ -1,0 +1,5 @@
+---
+- hosts: pluto
+  sudo: True
+  roles:
+    - greyhole

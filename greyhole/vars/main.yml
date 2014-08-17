@@ -1,0 +1,13 @@
+---
+db_name: greyhole
+db_user: greyhole
+db_pass: greyhole
+
+packages:
+  - samba
+  - greyhole
+  - system-config-samba
+  - cifs-utils
+  - curl
+  - python-mysqldb
+  - python-apt

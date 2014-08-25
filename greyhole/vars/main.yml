@@ -11,3 +11,10 @@ packages:
   - curl
   - python-mysqldb
   - python-apt
+
+greyhole_partitions:
+  - sdb1
+  - sdc1
+  - sdd1
+
+mount_path: /mnt/disks

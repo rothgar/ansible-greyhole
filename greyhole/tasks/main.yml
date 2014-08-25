@@ -1,3 +1,8 @@
+- name: Mount drives
+  file: path={{ mount_path }}/{{ item }} state=directory
+    owner=root group=root
+  with_items: {{ ansible_devices }}
+
 - apt_repository: repo='deb http://www.greyhole.net/releases/deb stable main' state=present
 - apt_key: url=http://www.greyhole.net/releases/deb/greyhole-debsig.asc state=present
 
@@ -18,7 +23,7 @@
 - name: Import MySQL db
   mysql_db: name={{ db_name }} login_user={{ db_user }} login_password={{ db_pass }}
     state=import target=/usr/share/greyhole/schema-mysql.sql
-    ignore_errors: yes
+  ignore_errors: yes
 
 - name: Copy greyhole.conf
   template: src=greyhole.conf.j2 dest=/etc/greyhole.conf

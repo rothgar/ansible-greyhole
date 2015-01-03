@@ -1,5 +1,5 @@
 ---
-- hosts: pluto
+- hosts: "{{ host | default('localhost') }}"
   sudo: True
   roles:
     - greyhole
